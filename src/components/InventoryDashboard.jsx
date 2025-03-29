@@ -31,7 +31,7 @@ const InventoryDashboard = () => {
 
   const fetchAllProducts = async () => {
     try {
-      const response = await fetch('https://ps-ims-backend.vercel.app/api/inventory');
+      const response = await fetch('http://localhost:8080/api/inventory');
       if (!response.ok) throw new Error('Failed to fetch products');
       const data = await response.json();
       setProducts(data);
@@ -58,7 +58,7 @@ const InventoryDashboard = () => {
   const addProduct = async (formData) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://ps-ims-backend.vercel.app/api/inventory', {
+      const response = await fetch('http://localhost:8080/api/inventory', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -119,7 +119,7 @@ const InventoryDashboard = () => {
 
   const handleDownload = async () => {
     try {
-      const response = await fetch('https://ps-ims-backend.vercel.app/api/inventory');
+      const response = await fetch('http://localhost:8080/api/inventory');
       if (!response.ok) {
         throw new Error('Failed to fetch inventory data');
       }

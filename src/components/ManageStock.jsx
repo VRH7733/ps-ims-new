@@ -52,7 +52,7 @@ export default function ManageStock() {
     const fetchAllUsers = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch('https://ps-ims-backend.vercel.app/api/users/getAlluser', {
+        const res = await fetch('http://localhost:8080/api/users/getAlluser', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -77,7 +77,7 @@ export default function ManageStock() {
     const fetchAllStock = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch('https://ps-ims-backend.vercel.app/api/stock', {
+        const res = await fetch('http://localhost:8080/api/stock', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -144,7 +144,7 @@ export default function ManageStock() {
     try {
       const token = localStorage.getItem('token');
       const res = await fetch(
-        `https://ps-ims-backend.vercel.app/api/stock/${stockBeingEdited._id}`,
+        `http://localhost:8080/api/stock/${stockBeingEdited._id}`,
         {
           method: 'PUT',
           headers: {

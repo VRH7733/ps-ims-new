@@ -39,7 +39,7 @@ const AddProductForm = ({ onSubmit, onDiscard }) => {
   const fetchStores = async () => {
     try {
       // e.g. GET /api/stores to fetch all
-      const res = await fetch('https://ps-ims-backend.vercel.app/api/stores');
+      const res = await fetch('http://localhost:8080/api/stores');
       if (!res.ok) throw new Error('Failed to fetch stores');
       const data = await res.json();
       setStores(data);
@@ -51,7 +51,7 @@ const AddProductForm = ({ onSubmit, onDiscard }) => {
   const fetchSuppliers = async () => {
     try {
       // e.g. GET /api/supplier/getAll or /api/suppliers
-      const res = await fetch('https://ps-ims-backend.vercel.app/api/supplier/getAll');
+      const res = await fetch('http://localhost:8080/api/supplier/getAll');
       if (!res.ok) throw new Error('Failed to fetch suppliers');
       const data = await res.json();
       setSuppliers(data);

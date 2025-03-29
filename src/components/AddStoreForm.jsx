@@ -17,7 +17,7 @@ const AddStoreForm = ({ onClose, onSuccess }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('https://ps-ims-backend.vercel.app/api/stores', {
+            const res = await fetch('http://localhost:8080/api/stores', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),

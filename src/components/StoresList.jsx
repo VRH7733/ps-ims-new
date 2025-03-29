@@ -14,7 +14,7 @@ const StoresList = () => {
   useEffect(() => {
     const fetchStores = async () => {
       try {
-        const res = await fetch('https://ps-ims-backend.vercel.app/api/stores');
+        const res = await fetch('http://localhost:8080/api/stores');
         if (!res.ok) {
           throw new Error('Failed to fetch stores');
         }

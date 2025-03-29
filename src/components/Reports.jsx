@@ -100,7 +100,7 @@ const Reports = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('https://ps-ims-backend.vercel.app/api/inventory');
+                const response = await fetch('http://localhost:8080/api/inventory');
                 const data = await response.json();
                 setProducts(data);
                 updateChartData(data);
@@ -111,7 +111,7 @@ const Reports = () => {
 
         const fetchSuppliers = async () => {
             try {
-                const response = await fetch('https://ps-ims-backend.vercel.app/api/supplier/getAll');
+                const response = await fetch('http://localhost:8080/api/supplier/getAll');
                 const data = await response.json();
                 setSuppliers(data);
             } catch (error) {
@@ -121,7 +121,7 @@ const Reports = () => {
 
         const fetchSalesData = async () => {
             try {
-                const response = await fetch('https://ps-ims-backend.vercel.app/api/sales');
+                const response = await fetch('http://localhost:8080/api/sales');
                 const data = await response.json();
                 calculateOverviewData(data);
             } catch (error) {

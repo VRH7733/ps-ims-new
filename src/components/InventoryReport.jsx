@@ -18,7 +18,7 @@ const SalesReport = () => {
     useEffect(() => {
         const fetchSalesData = async () => {
             try {
-                const response = await fetch('https://ps-ims-backend.vercel.app/api/inventory');
+                const response = await fetch('http://localhost:8080/api/inventory');
                 if (!response.ok) {
                     throw new Error('Failed to fetch sales data');
                 }

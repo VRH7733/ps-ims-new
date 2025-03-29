@@ -9,7 +9,7 @@ export default function SalesTable() {
   const [dateFilter, setDateFilter] = useState("");
 
   useEffect(() => {
-    fetch("https://ps-ims-backend.vercel.app/api/sales")
+    fetch("http://localhost:8080/api/sales")
       .then((response) => response.json())
       .then((data) => {
         setSales(data);

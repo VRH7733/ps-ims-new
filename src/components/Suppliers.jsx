@@ -54,7 +54,7 @@ function Suppliers() {
         }
 
         try {
-            const response = await fetch('https://ps-ims-backend.vercel.app/api/supplier/create', {
+            const response = await fetch('http://localhost:8080/api/supplier/create', {
                 method: 'POST',
                 body: formData,
             });
@@ -129,7 +129,7 @@ function Suppliers() {
     useEffect(() => {
         const fetchSuppliers = async () => {
             try {
-                const res = await fetch('https://ps-ims-backend.vercel.app/api/supplier/getAll');
+                const res = await fetch('http://localhost:8080/api/supplier/getAll');
                 if (!res.ok) throw new Error('Failed to fetch suppliers');
                 const data = await res.json();
                 setSuppliers(data);

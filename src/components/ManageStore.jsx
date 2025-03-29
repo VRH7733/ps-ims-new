@@ -25,7 +25,7 @@ const ManageStore = () => {
     const fetchStoreAndInventory = async () => {
       try {
         // Using the new custom endpoint: /api/manage-store/:id
-        const res = await fetch(`https://ps-ims-backend.vercel.app/api/manage-store/${id}`);
+        const res = await fetch(`http://localhost:8080/api/manage-store/${id}`);
         if (!res.ok) {
           throw new Error('Failed to fetch store + inventory data');
         }
@@ -83,7 +83,7 @@ const ManageStore = () => {
     e.preventDefault();
     try {
       // We can still do a PUT /api/stores/:id for store updates
-      const res = await fetch(`https://ps-ims-backend.vercel.app/api/stores/${id}`, {
+      const res = await fetch(`http://localhost:8080/api/stores/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

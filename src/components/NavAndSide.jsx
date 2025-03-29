@@ -165,7 +165,7 @@ const NavAndSide = () => {
         }
 
         try {
-            const res = await fetch('https://ps-ims-backend.vercel.app/api/users/account', {
+            const res = await fetch('http://localhost:8080/api/users/account', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -211,7 +211,7 @@ const NavAndSide = () => {
                 formData.append('profilePic', profileData.profilePictureFile);
             }
 
-            const res = await fetch('https://ps-ims-backend.vercel.app/api/users/updateUser', {
+            const res = await fetch('http://localhost:8080/api/users/updateUser', {
                 method: 'PUT',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -261,7 +261,7 @@ const NavAndSide = () => {
     // Notifications logic
     const fetchOutForDeliveryOrders = async () => {
         try {
-            const response = await fetch('https://ps-ims-backend.vercel.app/api/orders?status=Out for Delivery');
+            const response = await fetch('http://localhost:8080/api/orders?status=Out for Delivery');
             const data = await response.json();
             setNotifications(data);
         } catch (error) {
@@ -288,7 +288,7 @@ const NavAndSide = () => {
                 return;
             }
             try {
-                const res = await fetch(`https://ps-ims-backend.vercel.app/api/search?query=${encodeURIComponent(searchTerm)}`);
+                const res = await fetch(`http://localhost:8080/api/search?query=${encodeURIComponent(searchTerm)}`);
                 if (!res.ok) throw new Error('Search failed');
                 const data = await res.json();
                 setSearchResults(data);

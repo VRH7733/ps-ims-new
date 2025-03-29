@@ -70,7 +70,7 @@ const Orders = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await fetch('https://ps-ims-backend.vercel.app/api/orders');
+                const response = await fetch('http://localhost:8080/api/orders');
                 const data = await response.json();
                 setOrders(data);
             } catch (error) {
@@ -111,12 +111,12 @@ const Orders = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await fetch('https://ps-ims-backend.vercel.app/api/orders');
+                const response = await fetch('http://localhost:8080/api/orders');
                 const data = await response.json();
                 setOrders(data);
 
                 // Fetch order statistics
-                const statsResponse = await fetch('https://ps-ims-backend.vercel.app/api/orders/stats');
+                const statsResponse = await fetch('http://localhost:8080/api/orders/stats');
                 if (!statsResponse.ok) {
                     throw new Error('Failed to fetch order statistics');
                 }
@@ -160,7 +160,7 @@ const Orders = () => {
         };
 
         try {
-            const response = await fetch('https://ps-ims-backend.vercel.app/api/orders', {
+            const response = await fetch('http://localhost:8080/api/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -221,7 +221,7 @@ const Orders = () => {
 
     const handleDownload = async () => {
         try {
-            const response = await fetch('https://ps-ims-backend.vercel.app/api/orders');
+            const response = await fetch('http://localhost:8080/api/orders');
             const data = await response.json();
             downloadCSV(data);
         } catch (error) {

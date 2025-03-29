@@ -28,7 +28,7 @@ const DashBoard = () => {
                 }
 
                 // 2) Make fetch call with Bearer token
-                const res = await fetch('https://ps-ims-backend.vercel.app/api/dashboard', {
+                const res = await fetch('http://localhost:8080/api/dashboard', {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                     },

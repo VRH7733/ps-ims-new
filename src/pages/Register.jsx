@@ -42,7 +42,7 @@ export default function Register() {
         if (isValid) {
             try {
                 const response = await axios.post(
-                    'https://ps-ims-backend.vercel.app/api/users/register',
+                    'http://localhost:8080/api/users/register',
                     { email, password, confirmPassword },
                     { headers: { "Content-Type": "application/json" } }
                 );

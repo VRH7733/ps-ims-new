@@ -13,7 +13,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`https://ps-ims-backend.vercel.app/api/inventory/${id}`);
+        const res = await fetch(`http://localhost:8080/api/inventory/${id}`);
         if (!res.ok) {
           throw new Error('Failed to fetch product');
         }
@@ -44,7 +44,7 @@ const ProductDetails = () => {
   // ✅ Saves edited product to database
   const handleSave = async () => {
     try {
-      const res = await fetch(`https://ps-ims-backend.vercel.app/api/inventory/${id}`, {
+      const res = await fetch(`http://localhost:8080/api/inventory/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedProduct),
